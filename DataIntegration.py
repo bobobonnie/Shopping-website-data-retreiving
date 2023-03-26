@@ -25,7 +25,7 @@ s = df['prodName'].str.extract(f'({"|".join(brands)})')
 # s 裡面有 multiple index, 我們要使用第一個index, 所以用level=0
 # df['brand'] = s.groupby(level=0).agg(lambda x: ' '.join(x))
 df['brand'] = s
-# 這裡的extract 不知道為什麼找到了不只一組的品牌, 但是只有第一個是對的， 所以只留第一個
+
 df['brand'] = df['brand'].str.split(' ').str[0]
 
 # 從商品名稱中擷取尺寸
